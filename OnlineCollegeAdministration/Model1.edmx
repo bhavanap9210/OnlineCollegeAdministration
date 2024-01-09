@@ -1,0 +1,1227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="user_tb" EntityType="Model1.Store.user_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="user_role_tb" EntityType="Model1.Store.user_role_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="role_tb" EntityType="Model1.Store.role_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="role_menu_tb" EntityType="Model1.Store.role_menu_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="menu_tb" EntityType="Model1.Store.menu_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="student_tb" EntityType="Model1.Store.student_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="courses" EntityType="Model1.Store.courses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="course_duration_tb" EntityType="Model1.Store.course_duration_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="days_tb" EntityType="Model1.Store.days_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staff_tb" EntityType="Model1.Store.staff_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="staff_course_tb" EntityType="Model1.Store.staff_course_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="student_course_tb" EntityType="Model1.Store.student_course_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="books_course_tb" EntityType="Model1.Store.books_course_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="books_tb" EntityType="Model1.Store.books_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="student_grade_tb" EntityType="Model1.Store.student_grade_tb" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="grade_tb" EntityType="Model1.Store.grade_tb" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="user_tbuser_role_tb" Association="Model1.Store.user_tbuser_role_tb">
+      <End Role="user_tb" EntitySet="user_tb" />
+      <End Role="user_role_tb" EntitySet="user_role_tb" />
+    </AssociationSet>
+    <AssociationSet Name="role_tbuser_role_tb" Association="Model1.Store.role_tbuser_role_tb">
+      <End Role="role_tb" EntitySet="role_tb" />
+      <End Role="user_role_tb" EntitySet="user_role_tb" />
+    </AssociationSet>
+    <AssociationSet Name="menu_tbrole_menu_tb" Association="Model1.Store.menu_tbrole_menu_tb">
+      <End Role="menu_tb" EntitySet="menu_tb" />
+      <End Role="role_menu_tb" EntitySet="role_menu_tb" />
+    </AssociationSet>
+    <AssociationSet Name="role_tbrole_menu_tb" Association="Model1.Store.role_tbrole_menu_tb">
+      <End Role="role_tb" EntitySet="role_tb" />
+      <End Role="role_menu_tb" EntitySet="role_menu_tb" />
+    </AssociationSet>
+    <AssociationSet Name="coursecourse_duration_tb" Association="Model1.Store.coursecourse_duration_tb">
+      <End Role="course" EntitySet="courses" />
+      <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+    </AssociationSet>
+    <AssociationSet Name="days_tbcourse_duration_tb" Association="Model1.Store.days_tbcourse_duration_tb">
+      <End Role="days_tb" EntitySet="days_tb" />
+      <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+    </AssociationSet>
+    <AssociationSet Name="course_duration_tbstaff_course_tb" Association="Model1.Store.course_duration_tbstaff_course_tb">
+      <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+      <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="staff_tbstaff_course_tb" Association="Model1.Store.staff_tbstaff_course_tb">
+      <End Role="staff_tb" EntitySet="staff_tb" />
+      <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="staff_course_tbstudent_course_tb" Association="Model1.Store.staff_course_tbstudent_course_tb">
+      <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+      <End Role="student_course_tb" EntitySet="student_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="student_tbstudent_course_tb" Association="Model1.Store.student_tbstudent_course_tb">
+      <End Role="student_tb" EntitySet="student_tb" />
+      <End Role="student_course_tb" EntitySet="student_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="books_tbbooks_course_tb" Association="Model1.Store.books_tbbooks_course_tb">
+      <End Role="books_tb" EntitySet="books_tb" />
+      <End Role="books_course_tb" EntitySet="books_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="coursebooks_course_tb" Association="Model1.Store.coursebooks_course_tb">
+      <End Role="course" EntitySet="courses" />
+      <End Role="books_course_tb" EntitySet="books_course_tb" />
+    </AssociationSet>
+    <AssociationSet Name="student_course_tbstudent_grade_tb" Association="Model1.Store.student_course_tbstudent_grade_tb">
+      <End Role="student_course_tb" EntitySet="student_course_tb" />
+      <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+    </AssociationSet>
+    <AssociationSet Name="student_tbstudent_grade_tb" Association="Model1.Store.student_tbstudent_grade_tb">
+      <End Role="student_tb" EntitySet="student_tb" />
+      <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+    </AssociationSet>
+    <AssociationSet Name="grade_tbstudent_grade_tb" Association="Model1.Store.grade_tbstudent_grade_tb">
+      <End Role="grade_tb" EntitySet="grade_tb" />
+      <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="user_tb">
+    <Key>
+      <PropertyRef Name="user_id" />
+    </Key>
+    <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="user_role_tb">
+    <Key>
+      <PropertyRef Name="user_role_id" />
+    </Key>
+    <Property Name="user_role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="role_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="user_tb_user_id" Type="int" Nullable="false" />
+    <Property Name="role_tb_role_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="role_tb">
+    <Key>
+      <PropertyRef Name="role_id" />
+    </Key>
+    <Property Name="role_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_desc" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="role_menu_tb">
+    <Key>
+      <PropertyRef Name="role_menu_id" />
+    </Key>
+    <Property Name="role_menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="role_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="menu_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="menu_tb_menu_id" Type="int" Nullable="false" />
+    <Property Name="role_tb_role_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="menu_tb">
+    <Key>
+      <PropertyRef Name="menu_id" />
+    </Key>
+    <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="menu_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="page_url" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_tb">
+    <Key>
+      <PropertyRef Name="student_id" />
+    </Key>
+    <Property Name="student_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="student_last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_first_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_middle_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dob_dt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addr1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addr2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="state" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="zip_code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mobile_no" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="courses">
+    <Key>
+      <PropertyRef Name="course_id" />
+    </Key>
+    <Property Name="course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_desc" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="course_duration_tb">
+    <Key>
+      <PropertyRef Name="course_duration_id" />
+    </Key>
+    <Property Name="course_duration_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_day_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_start_time" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_end_time" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_duration_desc" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_course_id" Type="int" Nullable="false" />
+    <Property Name="days_tb_day_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="days_tb">
+    <Key>
+      <PropertyRef Name="day_id" />
+    </Key>
+    <Property Name="day_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="day_name" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff_tb">
+    <Key>
+      <PropertyRef Name="staff_id" />
+    </Key>
+    <Property Name="staff_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staff_last_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staff_first_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staff_middle_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="dob_dt" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addr1" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="addr2" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="city" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="state" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="zip_code" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staff_email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mobile_no" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="staff_course_tb">
+    <Key>
+      <PropertyRef Name="staff_course_id" />
+    </Key>
+    <Property Name="staff_course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staff_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_duration_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="year_nbr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="month_nbr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_duration_tb_course_duration_id" Type="int" Nullable="false" />
+    <Property Name="staff_tb_staff_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_course_tb">
+    <Key>
+      <PropertyRef Name="student_course_id" />
+    </Key>
+    <Property Name="student_course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="staff_course_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staff_course_tb_staff_course_id" Type="int" Nullable="false" />
+    <Property Name="student_tb_student_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="books_course_tb">
+    <Key>
+      <PropertyRef Name="book_course_id" />
+    </Key>
+    <Property Name="book_course_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="course_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="book_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="books_tb_book_id" Type="int" Nullable="false" />
+    <Property Name="course_course_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="books_tb">
+    <Key>
+      <PropertyRef Name="book_id" />
+    </Key>
+    <Property Name="book_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="book_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="book_author_name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="active_ind" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="student_grade_tb">
+    <Key>
+      <PropertyRef Name="student_grade_id" />
+    </Key>
+    <Property Name="student_grade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grade_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="course_duration_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="staff_id" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="finalized_ind" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="student_course_tb_student_course_id" Type="int" Nullable="false" />
+    <Property Name="student_tb_student_id" Type="int" Nullable="false" />
+    <Property Name="grade_tb_grade_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="grade_tb">
+    <Key>
+      <PropertyRef Name="grade_id" />
+    </Key>
+    <Property Name="grade_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grade_cd" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="grade_desc" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="user_tbuser_role_tb">
+    <End Role="user_tb" Type="Model1.Store.user_tb" Multiplicity="1" />
+    <End Role="user_role_tb" Type="Model1.Store.user_role_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="user_tb">
+        <PropertyRef Name="user_id" />
+      </Principal>
+      <Dependent Role="user_role_tb">
+        <PropertyRef Name="user_tb_user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="role_tbuser_role_tb">
+    <End Role="role_tb" Type="Model1.Store.role_tb" Multiplicity="1" />
+    <End Role="user_role_tb" Type="Model1.Store.user_role_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_tb">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="user_role_tb">
+        <PropertyRef Name="role_tb_role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="menu_tbrole_menu_tb">
+    <End Role="menu_tb" Type="Model1.Store.menu_tb" Multiplicity="1" />
+    <End Role="role_menu_tb" Type="Model1.Store.role_menu_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="menu_tb">
+        <PropertyRef Name="menu_id" />
+      </Principal>
+      <Dependent Role="role_menu_tb">
+        <PropertyRef Name="menu_tb_menu_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="role_tbrole_menu_tb">
+    <End Role="role_tb" Type="Model1.Store.role_tb" Multiplicity="1" />
+    <End Role="role_menu_tb" Type="Model1.Store.role_menu_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="role_tb">
+        <PropertyRef Name="role_id" />
+      </Principal>
+      <Dependent Role="role_menu_tb">
+        <PropertyRef Name="role_tb_role_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coursecourse_duration_tb">
+    <End Role="course" Type="Model1.Store.courses" Multiplicity="1" />
+    <End Role="course_duration_tb" Type="Model1.Store.course_duration_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="course_id" />
+      </Principal>
+      <Dependent Role="course_duration_tb">
+        <PropertyRef Name="course_course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="days_tbcourse_duration_tb">
+    <End Role="days_tb" Type="Model1.Store.days_tb" Multiplicity="1" />
+    <End Role="course_duration_tb" Type="Model1.Store.course_duration_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="days_tb">
+        <PropertyRef Name="day_id" />
+      </Principal>
+      <Dependent Role="course_duration_tb">
+        <PropertyRef Name="days_tb_day_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="course_duration_tbstaff_course_tb">
+    <End Role="course_duration_tb" Type="Model1.Store.course_duration_tb" Multiplicity="1" />
+    <End Role="staff_course_tb" Type="Model1.Store.staff_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course_duration_tb">
+        <PropertyRef Name="course_duration_id" />
+      </Principal>
+      <Dependent Role="staff_course_tb">
+        <PropertyRef Name="course_duration_tb_course_duration_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="staff_tbstaff_course_tb">
+    <End Role="staff_tb" Type="Model1.Store.staff_tb" Multiplicity="1" />
+    <End Role="staff_course_tb" Type="Model1.Store.staff_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff_tb">
+        <PropertyRef Name="staff_id" />
+      </Principal>
+      <Dependent Role="staff_course_tb">
+        <PropertyRef Name="staff_tb_staff_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="staff_course_tbstudent_course_tb">
+    <End Role="staff_course_tb" Type="Model1.Store.staff_course_tb" Multiplicity="1" />
+    <End Role="student_course_tb" Type="Model1.Store.student_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="staff_course_tb">
+        <PropertyRef Name="staff_course_id" />
+      </Principal>
+      <Dependent Role="student_course_tb">
+        <PropertyRef Name="staff_course_tb_staff_course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="student_tbstudent_course_tb">
+    <End Role="student_tb" Type="Model1.Store.student_tb" Multiplicity="1" />
+    <End Role="student_course_tb" Type="Model1.Store.student_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_tb">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="student_course_tb">
+        <PropertyRef Name="student_tb_student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="books_tbbooks_course_tb">
+    <End Role="books_tb" Type="Model1.Store.books_tb" Multiplicity="1" />
+    <End Role="books_course_tb" Type="Model1.Store.books_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books_tb">
+        <PropertyRef Name="book_id" />
+      </Principal>
+      <Dependent Role="books_course_tb">
+        <PropertyRef Name="books_tb_book_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="coursebooks_course_tb">
+    <End Role="course" Type="Model1.Store.courses" Multiplicity="1" />
+    <End Role="books_course_tb" Type="Model1.Store.books_course_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="course">
+        <PropertyRef Name="course_id" />
+      </Principal>
+      <Dependent Role="books_course_tb">
+        <PropertyRef Name="course_course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="student_course_tbstudent_grade_tb">
+    <End Role="student_course_tb" Type="Model1.Store.student_course_tb" Multiplicity="1" />
+    <End Role="student_grade_tb" Type="Model1.Store.student_grade_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_course_tb">
+        <PropertyRef Name="student_course_id" />
+      </Principal>
+      <Dependent Role="student_grade_tb">
+        <PropertyRef Name="student_course_tb_student_course_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="student_tbstudent_grade_tb">
+    <End Role="student_tb" Type="Model1.Store.student_tb" Multiplicity="1" />
+    <End Role="student_grade_tb" Type="Model1.Store.student_grade_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="student_tb">
+        <PropertyRef Name="student_id" />
+      </Principal>
+      <Dependent Role="student_grade_tb">
+        <PropertyRef Name="student_tb_student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="grade_tbstudent_grade_tb">
+    <End Role="grade_tb" Type="Model1.Store.grade_tb" Multiplicity="1" />
+    <End Role="student_grade_tb" Type="Model1.Store.student_grade_tb" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grade_tb">
+        <PropertyRef Name="grade_id" />
+      </Principal>
+      <Dependent Role="student_grade_tb">
+        <PropertyRef Name="grade_tb_grade_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="user_tb" EntityType="Model1.user_tb" />
+          <EntitySet Name="user_role_tb" EntityType="Model1.user_role_tb" />
+          <EntitySet Name="role_tb" EntityType="Model1.role_tb" />
+          <EntitySet Name="role_menu_tb" EntityType="Model1.role_menu_tb" />
+          <EntitySet Name="menu_tb" EntityType="Model1.menu_tb" />
+          <AssociationSet Name="user_tbuser_role_tb" Association="Model1.user_tbuser_role_tb">
+            <End Role="user_tb" EntitySet="user_tb" />
+            <End Role="user_role_tb" EntitySet="user_role_tb" />
+          </AssociationSet>
+          <AssociationSet Name="role_tbuser_role_tb" Association="Model1.role_tbuser_role_tb">
+            <End Role="role_tb" EntitySet="role_tb" />
+            <End Role="user_role_tb" EntitySet="user_role_tb" />
+          </AssociationSet>
+          <AssociationSet Name="menu_tbrole_menu_tb" Association="Model1.menu_tbrole_menu_tb">
+            <End Role="menu_tb" EntitySet="menu_tb" />
+            <End Role="role_menu_tb" EntitySet="role_menu_tb" />
+          </AssociationSet>
+          <AssociationSet Name="role_tbrole_menu_tb" Association="Model1.role_tbrole_menu_tb">
+            <End Role="role_tb" EntitySet="role_tb" />
+            <End Role="role_menu_tb" EntitySet="role_menu_tb" />
+          </AssociationSet>
+          <EntitySet Name="student_tb" EntityType="Model1.student_tb" />
+          <EntitySet Name="courses" EntityType="Model1.course" />
+          <EntitySet Name="course_duration_tb" EntityType="Model1.course_duration_tb" />
+          <EntitySet Name="days_tb" EntityType="Model1.days_tb" />
+          <AssociationSet Name="coursecourse_duration_tb" Association="Model1.coursecourse_duration_tb">
+            <End Role="course" EntitySet="courses" />
+            <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+          </AssociationSet>
+          <AssociationSet Name="days_tbcourse_duration_tb" Association="Model1.days_tbcourse_duration_tb">
+            <End Role="days_tb" EntitySet="days_tb" />
+            <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+          </AssociationSet>
+          <EntitySet Name="staff_tb" EntityType="Model1.staff_tb" />
+          <EntitySet Name="staff_course_tb" EntityType="Model1.staff_course_tb" />
+          <AssociationSet Name="course_duration_tbstaff_course_tb" Association="Model1.course_duration_tbstaff_course_tb">
+            <End Role="course_duration_tb" EntitySet="course_duration_tb" />
+            <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+          </AssociationSet>
+          <AssociationSet Name="staff_tbstaff_course_tb" Association="Model1.staff_tbstaff_course_tb">
+            <End Role="staff_tb" EntitySet="staff_tb" />
+            <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+          </AssociationSet>
+          <EntitySet Name="student_course_tb" EntityType="Model1.student_course_tb" />
+          <AssociationSet Name="staff_course_tbstudent_course_tb" Association="Model1.staff_course_tbstudent_course_tb">
+            <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+            <End Role="student_course_tb" EntitySet="student_course_tb" />
+          </AssociationSet>
+          <AssociationSet Name="student_tbstudent_course_tb" Association="Model1.student_tbstudent_course_tb">
+            <End Role="student_tb" EntitySet="student_tb" />
+            <End Role="student_course_tb" EntitySet="student_course_tb" />
+          </AssociationSet>
+          <EntitySet Name="books_course_tb" EntityType="Model1.books_course_tb" />
+          <EntitySet Name="books_tb" EntityType="Model1.books_tb" />
+          <AssociationSet Name="books_tbbooks_course_tb" Association="Model1.books_tbbooks_course_tb">
+            <End Role="books_tb" EntitySet="books_tb" />
+            <End Role="books_course_tb" EntitySet="books_course_tb" />
+          </AssociationSet>
+          <AssociationSet Name="coursebooks_course_tb" Association="Model1.coursebooks_course_tb">
+            <End Role="course" EntitySet="courses" />
+            <End Role="books_course_tb" EntitySet="books_course_tb" />
+          </AssociationSet>
+          <EntitySet Name="student_grade_tb" EntityType="Model1.student_grade_tb" />
+          <EntitySet Name="grade_tb" EntityType="Model1.grade_tb" />
+          <AssociationSet Name="student_course_tbstudent_grade_tb" Association="Model1.student_course_tbstudent_grade_tb">
+            <End Role="student_course_tb" EntitySet="student_course_tb" />
+            <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="student_tbstudent_grade_tb" Association="Model1.student_tbstudent_grade_tb">
+            <End Role="student_tb" EntitySet="student_tb" />
+            <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+          </AssociationSet>
+          <AssociationSet Name="grade_tbstudent_grade_tb" Association="Model1.grade_tbstudent_grade_tb">
+            <End Role="grade_tb" EntitySet="grade_tb" />
+            <End Role="student_grade_tb" EntitySet="student_grade_tb" />
+          </AssociationSet>
+          <EntitySet Name="year_tb" EntityType="Model1.year_tb" />
+          <EntitySet Name="month_tb" EntityType="Model1.month_tb" />
+          <AssociationSet Name="month_tbstaff_course_tb" Association="Model1.month_tbstaff_course_tb">
+            <End Role="month_tb" EntitySet="month_tb" />
+            <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+          </AssociationSet>
+          <AssociationSet Name="year_tbstaff_course_tb" Association="Model1.year_tbstaff_course_tb">
+            <End Role="year_tb" EntitySet="year_tb" />
+            <End Role="staff_course_tb" EntitySet="staff_course_tb" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="user_tb">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Type="Int32" Name="user_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="user_name" Nullable="false" />
+          <Property Type="String" Name="password" Nullable="false" />
+          <NavigationProperty Name="user_role_tb" Relationship="Model1.user_tbuser_role_tb" FromRole="user_tb" ToRole="user_role_tb" />
+          <Property Type="Boolean" Name="active_ind" Nullable="false" />
+          <Property Type="String" Name="addl_user_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="role_tb">
+          <Key>
+            <PropertyRef Name="role_id" />
+          </Key>
+          <Property Type="Int32" Name="role_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="role_desc" Nullable="false" />
+          <NavigationProperty Name="user_role_tb" Relationship="Model1.role_tbuser_role_tb" FromRole="role_tb" ToRole="user_role_tb" />
+          <NavigationProperty Name="role_menu_tb" Relationship="Model1.role_tbrole_menu_tb" FromRole="role_tb" ToRole="role_menu_tb" />
+        </EntityType>
+        <EntityType Name="user_role_tb">
+          <Key>
+            <PropertyRef Name="user_role_id" />
+          </Key>
+          <Property Type="Int32" Name="user_role_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="user_id" Nullable="false" />
+          <Property Type="String" Name="role_id" Nullable="false" />
+          <NavigationProperty Name="user_tb" Relationship="Model1.user_tbuser_role_tb" FromRole="user_role_tb" ToRole="user_tb" />
+          <NavigationProperty Name="role_tb" Relationship="Model1.role_tbuser_role_tb" FromRole="user_role_tb" ToRole="role_tb" />
+        </EntityType>
+        <EntityType Name="role_menu_tb">
+          <Key>
+            <PropertyRef Name="role_menu_id" />
+          </Key>
+          <Property Type="Int32" Name="role_menu_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="role_id" Nullable="false" />
+          <Property Type="String" Name="menu_id" Nullable="false" />
+          <NavigationProperty Name="menu_tb" Relationship="Model1.menu_tbrole_menu_tb" FromRole="role_menu_tb" ToRole="menu_tb" />
+          <NavigationProperty Name="role_tb" Relationship="Model1.role_tbrole_menu_tb" FromRole="role_menu_tb" ToRole="role_tb" />
+        </EntityType>
+        <EntityType Name="menu_tb">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Type="Int32" Name="menu_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="menu_name" Nullable="false" />
+          <Property Type="String" Name="page_url" Nullable="false" />
+          <NavigationProperty Name="role_menu_tb" Relationship="Model1.menu_tbrole_menu_tb" FromRole="menu_tb" ToRole="role_menu_tb" />
+          <Property Type="String" Name="active_ind" Nullable="false" />
+        </EntityType>
+        <Association Name="user_tbuser_role_tb">
+          <End Type="Model1.user_tb" Role="user_tb" Multiplicity="1" />
+          <End Type="Model1.user_role_tb" Role="user_role_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="role_tbuser_role_tb">
+          <End Type="Model1.role_tb" Role="role_tb" Multiplicity="1" />
+          <End Type="Model1.user_role_tb" Role="user_role_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="menu_tbrole_menu_tb">
+          <End Type="Model1.menu_tb" Role="menu_tb" Multiplicity="1" />
+          <End Type="Model1.role_menu_tb" Role="role_menu_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="role_tbrole_menu_tb">
+          <End Type="Model1.role_tb" Role="role_tb" Multiplicity="1" />
+          <End Type="Model1.role_menu_tb" Role="role_menu_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="student_tb">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Type="Int32" Name="student_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="student_last_name" Nullable="false" />
+          <Property Type="String" Name="student_first_name" Nullable="false" />
+          <Property Type="String" Name="student_middle_name" Nullable="false" />
+          <Property Type="String" Name="dob_dt" Nullable="false" />
+          <Property Type="String" Name="addr1" Nullable="false" />
+          <Property Type="String" Name="addr2" Nullable="false" />
+          <Property Type="String" Name="city" Nullable="false" />
+          <Property Type="String" Name="state" Nullable="false" />
+          <Property Type="String" Name="zip_code" Nullable="false" />
+          <Property Type="String" Name="country" Nullable="false" />
+          <Property Type="String" Name="student_email" Nullable="false" />
+          <Property Type="String" Name="mobile_no" Nullable="false" />
+          <Property Type="String" Name="active_ind" Nullable="false" />
+          <NavigationProperty Name="student_course_tb" Relationship="Model1.student_tbstudent_course_tb" FromRole="student_tb" ToRole="student_course_tb" />
+          <NavigationProperty Name="student_grade_tb" Relationship="Model1.student_tbstudent_grade_tb" FromRole="student_tb" ToRole="student_grade_tb" />
+          <Property Type="String" Name="student_id_txt" Nullable="false" />
+          <Property Type="Binary" Name="student_img" Nullable="false" />
+        </EntityType>
+        <EntityType Name="course">
+          <Key>
+            <PropertyRef Name="course_id" />
+          </Key>
+          <Property Type="Int32" Name="course_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="course_name" Nullable="false" />
+          <Property Type="String" Name="course_desc" Nullable="false" />
+          <NavigationProperty Name="course_duration_tb" Relationship="Model1.coursecourse_duration_tb" FromRole="course" ToRole="course_duration_tb" />
+          <NavigationProperty Name="books_course_tb" Relationship="Model1.coursebooks_course_tb" FromRole="course" ToRole="books_course_tb" />
+        </EntityType>
+        <EntityType Name="course_duration_tb">
+          <Key>
+            <PropertyRef Name="course_duration_id" />
+          </Key>
+          <Property Type="Int32" Name="course_duration_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="course_id" Nullable="false" />
+          <Property Type="String" Name="course_day_id" Nullable="false" />
+          <Property Type="String" Name="course_start_time" Nullable="false" />
+          <Property Type="String" Name="course_end_time" Nullable="false" />
+          <NavigationProperty Name="course" Relationship="Model1.coursecourse_duration_tb" FromRole="course_duration_tb" ToRole="course" />
+          <NavigationProperty Name="days_tb" Relationship="Model1.days_tbcourse_duration_tb" FromRole="course_duration_tb" ToRole="days_tb" />
+          <Property Type="String" Name="course_duration_desc" Nullable="false" />
+          <NavigationProperty Name="staff_course_tb" Relationship="Model1.course_duration_tbstaff_course_tb" FromRole="course_duration_tb" ToRole="staff_course_tb" />
+          <Property Type="String" Name="active_ind" Nullable="false" />
+          <Property Type="String" Name="course_id_txt" Nullable="false" />
+        </EntityType>
+        <EntityType Name="days_tb">
+          <Key>
+            <PropertyRef Name="day_id" />
+          </Key>
+          <Property Type="Int32" Name="day_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="day_name" Nullable="false" />
+          <NavigationProperty Name="course_duration_tb" Relationship="Model1.days_tbcourse_duration_tb" FromRole="days_tb" ToRole="course_duration_tb" />
+        </EntityType>
+        <Association Name="coursecourse_duration_tb">
+          <End Type="Model1.course" Role="course" Multiplicity="1" />
+          <End Type="Model1.course_duration_tb" Role="course_duration_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="days_tbcourse_duration_tb">
+          <End Type="Model1.days_tb" Role="days_tb" Multiplicity="1" />
+          <End Type="Model1.course_duration_tb" Role="course_duration_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="staff_tb">
+          <Key>
+            <PropertyRef Name="staff_id" />
+          </Key>
+          <Property Type="Int32" Name="staff_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="staff_last_name" Nullable="false" />
+          <Property Type="String" Name="staff_first_name" Nullable="false" />
+          <Property Type="String" Name="staff_middle_name" Nullable="false" />
+          <Property Type="String" Name="dob_dt" Nullable="false" />
+          <Property Type="String" Name="addr1" Nullable="false" />
+          <Property Type="String" Name="addr2" Nullable="false" />
+          <Property Type="String" Name="city" Nullable="false" />
+          <Property Type="String" Name="state" Nullable="false" />
+          <Property Type="String" Name="zip_code" Nullable="false" />
+          <Property Type="String" Name="country" Nullable="false" />
+          <Property Type="String" Name="staff_email" Nullable="false" />
+          <Property Type="String" Name="mobile_no" Nullable="false" />
+          <Property Type="String" Name="active_ind" Nullable="false" />
+          <NavigationProperty Name="staff_course_tb" Relationship="Model1.staff_tbstaff_course_tb" FromRole="staff_tb" ToRole="staff_course_tb" />
+          <Property Type="String" Name="staff_id_txt" Nullable="false" />
+          <Property Type="Binary" Name="staff_img" Nullable="false" />
+        </EntityType>
+        <EntityType Name="staff_course_tb">
+          <Key>
+            <PropertyRef Name="staff_course_id" />
+          </Key>
+          <Property Type="Int32" Name="staff_course_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="staff_id" Nullable="false" />
+          <Property Type="String" Name="course_duration_id" Nullable="false" />
+          <NavigationProperty Name="course_duration_tb" Relationship="Model1.course_duration_tbstaff_course_tb" FromRole="staff_course_tb" ToRole="course_duration_tb" />
+          <NavigationProperty Name="staff_tb" Relationship="Model1.staff_tbstaff_course_tb" FromRole="staff_course_tb" ToRole="staff_tb" />
+          <NavigationProperty Name="student_course_tb" Relationship="Model1.staff_course_tbstudent_course_tb" FromRole="staff_course_tb" ToRole="student_course_tb" />
+          <Property Type="String" Name="year_nbr" Nullable="false" />
+          <Property Type="String" Name="month_nbr" Nullable="false" />
+          <NavigationProperty Name="month_tb" Relationship="Model1.month_tbstaff_course_tb" FromRole="staff_course_tb" ToRole="month_tb" />
+          <NavigationProperty Name="year_tb" Relationship="Model1.year_tbstaff_course_tb" FromRole="staff_course_tb" ToRole="year_tb" />
+        </EntityType>
+        <Association Name="course_duration_tbstaff_course_tb">
+          <End Type="Model1.course_duration_tb" Role="course_duration_tb" Multiplicity="1" />
+          <End Type="Model1.staff_course_tb" Role="staff_course_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="staff_tbstaff_course_tb">
+          <End Type="Model1.staff_tb" Role="staff_tb" Multiplicity="1" />
+          <End Type="Model1.staff_course_tb" Role="staff_course_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="student_course_tb">
+          <Key>
+            <PropertyRef Name="student_course_id" />
+          </Key>
+          <Property Type="Int32" Name="student_course_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="staff_course_tb" Relationship="Model1.staff_course_tbstudent_course_tb" FromRole="student_course_tb" ToRole="staff_course_tb" />
+          <Property Type="String" Name="staff_course_id" Nullable="false" />
+          <Property Type="String" Name="student_id" Nullable="false" />
+          <NavigationProperty Name="student_tb" Relationship="Model1.student_tbstudent_course_tb" FromRole="student_course_tb" ToRole="student_tb" />
+          <NavigationProperty Name="student_grade_tb" Relationship="Model1.student_course_tbstudent_grade_tb" FromRole="student_course_tb" ToRole="student_grade_tb" />
+        </EntityType>
+        <Association Name="staff_course_tbstudent_course_tb">
+          <End Type="Model1.staff_course_tb" Role="staff_course_tb" Multiplicity="1" />
+          <End Type="Model1.student_course_tb" Role="student_course_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="student_tbstudent_course_tb">
+          <End Type="Model1.student_tb" Role="student_tb" Multiplicity="1" />
+          <End Type="Model1.student_course_tb" Role="student_course_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="books_course_tb">
+          <Key>
+            <PropertyRef Name="book_course_id" />
+          </Key>
+          <Property Type="Int32" Name="book_course_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="course_id" Nullable="false" />
+          <NavigationProperty Name="books_tb" Relationship="Model1.books_tbbooks_course_tb" FromRole="books_course_tb" ToRole="books_tb" />
+          <NavigationProperty Name="course" Relationship="Model1.coursebooks_course_tb" FromRole="books_course_tb" ToRole="course" />
+          <Property Type="String" Name="book_id" Nullable="false" />
+        </EntityType>
+        <EntityType Name="books_tb">
+          <Key>
+            <PropertyRef Name="book_id" />
+          </Key>
+          <Property Type="Int32" Name="book_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="book_name" Nullable="false" />
+          <Property Type="String" Name="book_author_name" Nullable="false" />
+          <NavigationProperty Name="books_course_tb" Relationship="Model1.books_tbbooks_course_tb" FromRole="books_tb" ToRole="books_course_tb" />
+          <Property Type="String" Name="active_ind" Nullable="false" />
+        </EntityType>
+        <Association Name="books_tbbooks_course_tb">
+          <End Type="Model1.books_tb" Role="books_tb" Multiplicity="1" />
+          <End Type="Model1.books_course_tb" Role="books_course_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="coursebooks_course_tb">
+          <End Type="Model1.course" Role="course" Multiplicity="1" />
+          <End Type="Model1.books_course_tb" Role="books_course_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="student_grade_tb">
+          <Key>
+            <PropertyRef Name="student_grade_id" />
+          </Key>
+          <Property Type="Int32" Name="student_grade_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="grade_id" Nullable="false" />
+          <Property Type="String" Name="course_duration_id" Nullable="false" />
+          <NavigationProperty Name="student_course_tb" Relationship="Model1.student_course_tbstudent_grade_tb" FromRole="student_grade_tb" ToRole="student_course_tb" />
+          <NavigationProperty Name="student_tb" Relationship="Model1.student_tbstudent_grade_tb" FromRole="student_grade_tb" ToRole="student_tb" />
+          <NavigationProperty Name="grade_tb" Relationship="Model1.grade_tbstudent_grade_tb" FromRole="student_grade_tb" ToRole="grade_tb" />
+          <Property Type="String" Name="student_id" Nullable="false" />
+          <Property Type="String" Name="staff_id" Nullable="false" />
+          <Property Type="String" Name="finalized_ind" Nullable="false" />
+        </EntityType>
+        <EntityType Name="grade_tb">
+          <Key>
+            <PropertyRef Name="grade_id" />
+          </Key>
+          <Property Type="Int32" Name="grade_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="grade_cd" Nullable="false" />
+          <Property Type="String" Name="grade_desc" Nullable="false" />
+          <NavigationProperty Name="student_grade_tb" Relationship="Model1.grade_tbstudent_grade_tb" FromRole="grade_tb" ToRole="student_grade_tb" />
+        </EntityType>
+        <Association Name="student_course_tbstudent_grade_tb">
+          <End Type="Model1.student_course_tb" Role="student_course_tb" Multiplicity="1" />
+          <End Type="Model1.student_grade_tb" Role="student_grade_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="student_tbstudent_grade_tb">
+          <End Type="Model1.student_tb" Role="student_tb" Multiplicity="1" />
+          <End Type="Model1.student_grade_tb" Role="student_grade_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="grade_tbstudent_grade_tb">
+          <End Type="Model1.grade_tb" Role="grade_tb" Multiplicity="1" />
+          <End Type="Model1.student_grade_tb" Role="student_grade_tb" Multiplicity="*" />
+        </Association>
+        <EntityType Name="year_tb">
+          <Key>
+            <PropertyRef Name="year_id" />
+          </Key>
+          <Property Type="Int32" Name="year_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="year_nbr" Nullable="false" />
+          <NavigationProperty Name="staff_course_tb" Relationship="Model1.year_tbstaff_course_tb" FromRole="year_tb" ToRole="staff_course_tb" />
+        </EntityType>
+        <EntityType Name="month_tb">
+          <Key>
+            <PropertyRef Name="month_id" />
+          </Key>
+          <Property Type="Int32" Name="month_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="month_nbr" Nullable="false" />
+          <Property Type="String" Name="month_name" Nullable="false" />
+          <NavigationProperty Name="staff_course_tb" Relationship="Model1.month_tbstaff_course_tb" FromRole="month_tb" ToRole="staff_course_tb" />
+        </EntityType>
+        <Association Name="month_tbstaff_course_tb">
+          <End Type="Model1.month_tb" Role="month_tb" Multiplicity="1" />
+          <End Type="Model1.staff_course_tb" Role="staff_course_tb" Multiplicity="*" />
+        </Association>
+        <Association Name="year_tbstaff_course_tb">
+          <End Type="Model1.year_tb" Role="year_tb" Multiplicity="1" />
+          <End Type="Model1.staff_course_tb" Role="staff_course_tb" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="user_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.user_tb)">
+        <MappingFragment StoreEntitySet="user_tb">
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="user_role_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.user_role_tb)">
+        <MappingFragment StoreEntitySet="user_role_tb">
+          <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.role_tb)">
+        <MappingFragment StoreEntitySet="role_tb">
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="role_desc" ColumnName="role_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="role_menu_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.role_menu_tb)">
+        <MappingFragment StoreEntitySet="role_menu_tb">
+          <ScalarProperty Name="role_menu_id" ColumnName="role_menu_id" />
+          <ScalarProperty Name="role_id" ColumnName="role_id" />
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="menu_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.menu_tb)">
+        <MappingFragment StoreEntitySet="menu_tb">
+          <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+          <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+          <ScalarProperty Name="page_url" ColumnName="page_url" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.student_tb)">
+        <MappingFragment StoreEntitySet="student_tb">
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="student_last_name" ColumnName="student_last_name" />
+          <ScalarProperty Name="student_first_name" ColumnName="student_first_name" />
+          <ScalarProperty Name="student_middle_name" ColumnName="student_middle_name" />
+          <ScalarProperty Name="dob_dt" ColumnName="dob_dt" />
+          <ScalarProperty Name="addr1" ColumnName="addr1" />
+          <ScalarProperty Name="addr2" ColumnName="addr2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="student_email" ColumnName="student_email" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="courses">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.course)">
+        <MappingFragment StoreEntitySet="courses">
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="course_desc" ColumnName="course_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="course_duration_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.course_duration_tb)">
+        <MappingFragment StoreEntitySet="course_duration_tb">
+          <ScalarProperty Name="course_duration_id" ColumnName="course_duration_id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="course_day_id" ColumnName="course_day_id" />
+          <ScalarProperty Name="course_start_time" ColumnName="course_start_time" />
+          <ScalarProperty Name="course_end_time" ColumnName="course_end_time" />
+          <ScalarProperty Name="course_duration_desc" ColumnName="course_duration_desc" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="days_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.days_tb)">
+        <MappingFragment StoreEntitySet="days_tb">
+          <ScalarProperty Name="day_id" ColumnName="day_id" />
+          <ScalarProperty Name="day_name" ColumnName="day_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staff_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.staff_tb)">
+        <MappingFragment StoreEntitySet="staff_tb">
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="staff_last_name" ColumnName="staff_last_name" />
+          <ScalarProperty Name="staff_first_name" ColumnName="staff_first_name" />
+          <ScalarProperty Name="staff_middle_name" ColumnName="staff_middle_name" />
+          <ScalarProperty Name="dob_dt" ColumnName="dob_dt" />
+          <ScalarProperty Name="addr1" ColumnName="addr1" />
+          <ScalarProperty Name="addr2" ColumnName="addr2" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="zip_code" ColumnName="zip_code" />
+          <ScalarProperty Name="country" ColumnName="country" />
+          <ScalarProperty Name="staff_email" ColumnName="staff_email" />
+          <ScalarProperty Name="mobile_no" ColumnName="mobile_no" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="staff_course_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.staff_course_tb)">
+        <MappingFragment StoreEntitySet="staff_course_tb">
+          <ScalarProperty Name="staff_course_id" ColumnName="staff_course_id" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="course_duration_id" ColumnName="course_duration_id" />
+          <ScalarProperty Name="year_nbr" ColumnName="year_nbr" />
+          <ScalarProperty Name="month_nbr" ColumnName="month_nbr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_course_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.student_course_tb)">
+        <MappingFragment StoreEntitySet="student_course_tb">
+          <ScalarProperty Name="student_course_id" ColumnName="student_course_id" />
+          <ScalarProperty Name="staff_course_id" ColumnName="staff_course_id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books_course_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.books_course_tb)">
+        <MappingFragment StoreEntitySet="books_course_tb">
+          <ScalarProperty Name="book_course_id" ColumnName="book_course_id" />
+          <ScalarProperty Name="course_id" ColumnName="course_id" />
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="books_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.books_tb)">
+        <MappingFragment StoreEntitySet="books_tb">
+          <ScalarProperty Name="book_id" ColumnName="book_id" />
+          <ScalarProperty Name="book_name" ColumnName="book_name" />
+          <ScalarProperty Name="book_author_name" ColumnName="book_author_name" />
+          <ScalarProperty Name="active_ind" ColumnName="active_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="student_grade_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.student_grade_tb)">
+        <MappingFragment StoreEntitySet="student_grade_tb">
+          <ScalarProperty Name="student_grade_id" ColumnName="student_grade_id" />
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+          <ScalarProperty Name="course_duration_id" ColumnName="course_duration_id" />
+          <ScalarProperty Name="student_id" ColumnName="student_id" />
+          <ScalarProperty Name="staff_id" ColumnName="staff_id" />
+          <ScalarProperty Name="finalized_ind" ColumnName="finalized_ind" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="grade_tb">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.grade_tb)">
+        <MappingFragment StoreEntitySet="grade_tb">
+          <ScalarProperty Name="grade_id" ColumnName="grade_id" />
+          <ScalarProperty Name="grade_cd" ColumnName="grade_cd" />
+          <ScalarProperty Name="grade_desc" ColumnName="grade_desc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="user_tbuser_role_tb" TypeName="Model1.user_tbuser_role_tb" StoreEntitySet="user_role_tb">
+      <EndProperty Name="user_tb">
+        <ScalarProperty Name="user_id" ColumnName="user_tb_user_id" />
+      </EndProperty>
+      <EndProperty Name="user_role_tb">
+        <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="role_tbuser_role_tb" TypeName="Model1.role_tbuser_role_tb" StoreEntitySet="user_role_tb">
+      <EndProperty Name="role_tb">
+        <ScalarProperty Name="role_id" ColumnName="role_tb_role_id" />
+      </EndProperty>
+      <EndProperty Name="user_role_tb">
+        <ScalarProperty Name="user_role_id" ColumnName="user_role_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="menu_tbrole_menu_tb" TypeName="Model1.menu_tbrole_menu_tb" StoreEntitySet="role_menu_tb">
+      <EndProperty Name="menu_tb">
+        <ScalarProperty Name="menu_id" ColumnName="menu_tb_menu_id" />
+      </EndProperty>
+      <EndProperty Name="role_menu_tb">
+        <ScalarProperty Name="role_menu_id" ColumnName="role_menu_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="role_tbrole_menu_tb" TypeName="Model1.role_tbrole_menu_tb" StoreEntitySet="role_menu_tb">
+      <EndProperty Name="role_tb">
+        <ScalarProperty Name="role_id" ColumnName="role_tb_role_id" />
+      </EndProperty>
+      <EndProperty Name="role_menu_tb">
+        <ScalarProperty Name="role_menu_id" ColumnName="role_menu_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="coursecourse_duration_tb" TypeName="Model1.coursecourse_duration_tb" StoreEntitySet="course_duration_tb">
+      <EndProperty Name="course">
+        <ScalarProperty Name="course_id" ColumnName="course_course_id" />
+      </EndProperty>
+      <EndProperty Name="course_duration_tb">
+        <ScalarProperty Name="course_duration_id" ColumnName="course_duration_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="days_tbcourse_duration_tb" TypeName="Model1.days_tbcourse_duration_tb" StoreEntitySet="course_duration_tb">
+      <EndProperty Name="days_tb">
+        <ScalarProperty Name="day_id" ColumnName="days_tb_day_id" />
+      </EndProperty>
+      <EndProperty Name="course_duration_tb">
+        <ScalarProperty Name="course_duration_id" ColumnName="course_duration_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="course_duration_tbstaff_course_tb" TypeName="Model1.course_duration_tbstaff_course_tb" StoreEntitySet="staff_course_tb">
+      <EndProperty Name="course_duration_tb">
+        <ScalarProperty Name="course_duration_id" ColumnName="course_duration_tb_course_duration_id" />
+      </EndProperty>
+      <EndProperty Name="staff_course_tb">
+        <ScalarProperty Name="staff_course_id" ColumnName="staff_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="staff_tbstaff_course_tb" TypeName="Model1.staff_tbstaff_course_tb" StoreEntitySet="staff_course_tb">
+      <EndProperty Name="staff_tb">
+        <ScalarProperty Name="staff_id" ColumnName="staff_tb_staff_id" />
+      </EndProperty>
+      <EndProperty Name="staff_course_tb">
+        <ScalarProperty Name="staff_course_id" ColumnName="staff_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="staff_course_tbstudent_course_tb" TypeName="Model1.staff_course_tbstudent_course_tb" StoreEntitySet="student_course_tb">
+      <EndProperty Name="staff_course_tb">
+        <ScalarProperty Name="staff_course_id" ColumnName="staff_course_tb_staff_course_id" />
+      </EndProperty>
+      <EndProperty Name="student_course_tb">
+        <ScalarProperty Name="student_course_id" ColumnName="student_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="student_tbstudent_course_tb" TypeName="Model1.student_tbstudent_course_tb" StoreEntitySet="student_course_tb">
+      <EndProperty Name="student_tb">
+        <ScalarProperty Name="student_id" ColumnName="student_tb_student_id" />
+      </EndProperty>
+      <EndProperty Name="student_course_tb">
+        <ScalarProperty Name="student_course_id" ColumnName="student_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="books_tbbooks_course_tb" TypeName="Model1.books_tbbooks_course_tb" StoreEntitySet="books_course_tb">
+      <EndProperty Name="books_tb">
+        <ScalarProperty Name="book_id" ColumnName="books_tb_book_id" />
+      </EndProperty>
+      <EndProperty Name="books_course_tb">
+        <ScalarProperty Name="book_course_id" ColumnName="book_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="coursebooks_course_tb" TypeName="Model1.coursebooks_course_tb" StoreEntitySet="books_course_tb">
+      <EndProperty Name="course">
+        <ScalarProperty Name="course_id" ColumnName="course_course_id" />
+      </EndProperty>
+      <EndProperty Name="books_course_tb">
+        <ScalarProperty Name="book_course_id" ColumnName="book_course_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="student_course_tbstudent_grade_tb" TypeName="Model1.student_course_tbstudent_grade_tb" StoreEntitySet="student_grade_tb">
+      <EndProperty Name="student_course_tb">
+        <ScalarProperty Name="student_course_id" ColumnName="student_course_tb_student_course_id" />
+      </EndProperty>
+      <EndProperty Name="student_grade_tb">
+        <ScalarProperty Name="student_grade_id" ColumnName="student_grade_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="student_tbstudent_grade_tb" TypeName="Model1.student_tbstudent_grade_tb" StoreEntitySet="student_grade_tb">
+      <EndProperty Name="student_tb">
+        <ScalarProperty Name="student_id" ColumnName="student_tb_student_id" />
+      </EndProperty>
+      <EndProperty Name="student_grade_tb">
+        <ScalarProperty Name="student_grade_id" ColumnName="student_grade_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="grade_tbstudent_grade_tb" TypeName="Model1.grade_tbstudent_grade_tb" StoreEntitySet="student_grade_tb">
+      <EndProperty Name="grade_tb">
+        <ScalarProperty Name="grade_id" ColumnName="grade_tb_grade_id" />
+      </EndProperty>
+      <EndProperty Name="student_grade_tb">
+        <ScalarProperty Name="student_grade_id" ColumnName="student_grade_id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model1" >
+        <EntityTypeShape EntityType="Model1.user_tb" Width="1.5" PointX="0.5" PointY="0.5" Height="2.172587890625" />
+        <EntityTypeShape EntityType="Model1.role_tb" Width="1.5" PointX="0.5" PointY="2.75" Height="1.7879850260416657" />
+        <EntityTypeShape EntityType="Model1.user_role_tb" Width="1.5" PointX="2.5" PointY="1.125" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.role_menu_tb" Width="1.5" PointX="2.5" PointY="3.5" Height="1.9802864583333331" />
+        <EntityTypeShape EntityType="Model1.menu_tb" Width="1.5" PointX="0.5" PointY="4.875" Height="1.9802864583333335" />
+        <AssociationConnector Association="Model1.user_tbuser_role_tb">
+          <ConnectorPoint PointX="2" PointY="1.8987939453124998" />
+          <ConnectorPoint PointX="2.5" PointY="1.8987939453124998" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.role_tbuser_role_tb">
+          <ConnectorPoint PointX="2" PointY="2.9276432291666667" />
+          <ConnectorPoint PointX="2.5" PointY="2.9276432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.menu_tbrole_menu_tb">
+          <ConnectorPoint PointX="2" PointY="5.1776432291666667" />
+          <ConnectorPoint PointX="2.5" PointY="5.1776432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.role_tbrole_menu_tb">
+          <ConnectorPoint PointX="2" PointY="4.0189925130208328" />
+          <ConnectorPoint PointX="2.5" PointY="4.0189925130208328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.student_tb" Width="2.125" PointX="10.5" PointY="5" Height="4.480205078125" />
+        <EntityTypeShape EntityType="Model1.course" Width="1.5" PointX="4.125" PointY="1.125" Height="1.59568359375" />
+        <EntityTypeShape EntityType="Model1.course_duration_tb" Width="1.75" PointX="6" PointY="2" Height="3.1340950520833326" />
+        <EntityTypeShape EntityType="Model1.days_tb" Width="1.5" PointX="4.125" PointY="3.5" Height="1.4033821614583326" />
+        <AssociationConnector Association="Model1.coursecourse_duration_tb">
+          <ConnectorPoint PointX="5.625" PointY="2.5526432291666667" />
+          <ConnectorPoint PointX="6" PointY="2.5526432291666667" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.days_tbcourse_duration_tb">
+          <ConnectorPoint PointX="5.625" PointY="4.297841796875" />
+          <ConnectorPoint PointX="6" PointY="4.297841796875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.staff_tb" Width="1.5" PointX="5.375" PointY="5.25" Height="4.2879036458333317" />
+        <EntityTypeShape EntityType="Model1.staff_course_tb" Width="1.75" PointX="8.25" PointY="2.75" Height="2.9417936197916656" />
+        <AssociationConnector Association="Model1.course_duration_tbstaff_course_tb">
+          <ConnectorPoint PointX="7.75" PointY="3.9420475260416663" />
+          <ConnectorPoint PointX="8.25" PointY="3.9420475260416663" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.staff_tbstaff_course_tb">
+          <ConnectorPoint PointX="6.875" PointY="5.4708968098958328" />
+          <ConnectorPoint PointX="8.25" PointY="5.4708968098958328" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.student_course_tb" Width="1.5" PointX="12.375" PointY="2.75" Height="1.7879850260416665" />
+        <AssociationConnector Association="Model1.staff_course_tbstudent_course_tb">
+          <ConnectorPoint PointX="10" PointY="3.5178464589843754" />
+          <ConnectorPoint PointX="12.375" PointY="3.5178464589843754" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.student_tbstudent_course_tb">
+          <ConnectorPoint PointX="11.875" PointY="5" />
+          <ConnectorPoint PointX="11.875" PointY="4.1638879704589851" />
+          <ConnectorPoint PointX="12.375" PointY="4.1638879704589851" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.books_course_tb" Width="1.875" PointX="11.625" PointY="0.5" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="Model1.books_tb" Width="1.5" PointX="8.125" PointY="0.5" Height="1.9802864583333335" />
+        <AssociationConnector Association="Model1.books_tbbooks_course_tb">
+          <ConnectorPoint PointX="9.625" PointY="1.21875" />
+          <ConnectorPoint PointX="11.625" PointY="1.21875" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.coursebooks_course_tb">
+          <ConnectorPoint PointX="5.625" PointY="1.1261528461538464" />
+          <ConnectorPoint PointX="6" PointY="0.75115284615384681" />
+          <ConnectorPoint PointX="6" PointY="0.12499999999999911" />
+          <ConnectorPoint PointX="11.25" PointY="0.12499999999999911" />
+          <ConnectorPoint PointX="11.625" PointY="0.49999999999999911" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.student_grade_tb" Width="1.5" PointX="14.25" PointY="5" />
+        <EntityTypeShape EntityType="Model1.grade_tb" Width="1.5" PointX="13.125" PointY="8.625" Height="1.7879850260416657" />
+        <AssociationConnector Association="Model1.student_course_tbstudent_grade_tb" />
+        <AssociationConnector Association="Model1.student_tbstudent_grade_tb" >
+          <ConnectorPoint PointX="12.625" PointY="6.4059985937499935" />
+          <ConnectorPoint PointX="14.25" PointY="6.4059985937499935" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.grade_tbstudent_grade_tb" >
+          <ConnectorPoint PointX="14.4375" PointY="8.625" />
+          <ConnectorPoint PointX="14.4375" PointY="7.7494921875" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="Model1.year_tb" Width="1.5" PointX="8.75" PointY="7.625" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="Model1.month_tb" Width="1.5" PointX="7.125" PointY="7.625" Height="1.7879850260416665" />
+        <AssociationConnector Association="Model1.month_tbstaff_course_tb">
+          <ConnectorPoint PointX="8.4375" PointY="7.625" />
+          <ConnectorPoint PointX="8.4375" PointY="5.6917936197916656" />
+        </AssociationConnector>
+        <AssociationConnector Association="Model1.year_tbstaff_course_tb">
+          <ConnectorPoint PointX="9.375" PointY="7.625" />
+          <ConnectorPoint PointX="9.375" PointY="5.6917936197916656" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

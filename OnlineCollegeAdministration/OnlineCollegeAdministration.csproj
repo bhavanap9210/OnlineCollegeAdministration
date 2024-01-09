@@ -1,0 +1,463 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OCA</RootNamespace>
+    <AssemblyName>OnlineCollegeAdministration</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=15.1.3.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Web, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Libraries\CrystalDecisions.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Contact.aspx" />
+    <Content Include="Admin\MaintainBooks.aspx" />
+    <Content Include="Admin\MaintainCourse.aspx" />
+    <Content Include="Admin\MaintainStaff.aspx" />
+    <Content Include="Admin\MaintainStudent.aspx" />
+    <Content Include="App_Themes\OCAThemes\OCAStyles.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Home.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="logo.png" />
+    <Content Include="Reports\Reports.aspx" />
+    <Content Include="Staff\StaffCourses.aspx" />
+    <Content Include="Staff\StaffGrades.aspx" />
+    <Content Include="Staff\StaffProfile.aspx" />
+    <Content Include="Student\StudentCourses.aspx" />
+    <Content Include="Student\StudentGrades.aspx" />
+    <Content Include="Student\StudentProfile.aspx" />
+    <Content Include="UserControls\MenuControl.ascx" />
+    <Content Include="UserControls\UCAdminBookAddEdit.ascx" />
+    <Content Include="UserControls\UCAdminBookView.ascx" />
+    <Content Include="UserControls\UCAdminCourseAddEdit.ascx" />
+    <Content Include="UserControls\UCAdminCourseView.ascx" />
+    <Content Include="UserControls\UCAdminStaffAddEdit.ascx" />
+    <Content Include="UserControls\UCAdminStaffView.ascx" />
+    <Content Include="UserControls\UCAdminStudentAddEdit.ascx" />
+    <Content Include="UserControls\UCAdminStudentView.ascx" />
+    <Content Include="UserControls\UCOtherReports.ascx" />
+    <Content Include="UserControls\UCStaffCoursesAddEdit.ascx" />
+    <Content Include="UserControls\UCStaffCoursesView.ascx" />
+    <Content Include="UserControls\UCStaffEdit.ascx" />
+    <Content Include="UserControls\UCStaffGradesEdit.ascx" />
+    <Content Include="UserControls\UCStaffGradesView.ascx" />
+    <Content Include="UserControls\UCStaffReports.ascx" />
+    <Content Include="UserControls\UCStudentCoursesAddEdit.ascx" />
+    <Content Include="UserControls\UCStudentCoursesView.ascx" />
+    <Content Include="UserControls\UCStudentEdit.ascx" />
+    <Content Include="UserControls\UCStudentGradesAddEdit.ascx" />
+    <Content Include="UserControls\UCStudentGradesView.ascx" />
+    <Content Include="UserControls\UCStudentReports.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MaintainBooks.aspx.cs">
+      <DependentUpon>MaintainBooks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MaintainBooks.aspx.designer.cs">
+      <DependentUpon>MaintainBooks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MaintainCourse.aspx.cs">
+      <DependentUpon>MaintainCourse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MaintainCourse.aspx.designer.cs">
+      <DependentUpon>MaintainCourse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MaintainStaff.aspx.cs">
+      <DependentUpon>MaintainStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MaintainStaff.aspx.designer.cs">
+      <DependentUpon>MaintainStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MaintainStudent.aspx.cs">
+      <DependentUpon>MaintainStudent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\MaintainStudent.aspx.designer.cs">
+      <DependentUpon>MaintainStudent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomImageHandler.ashx.cs">
+      <DependentUpon>CustomImageHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Content Include="CustomImageHandler.ashx" />
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginMaster.Master.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginMaster.Master.designer.cs">
+      <DependentUpon>LoginMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="OCAMaster.Master.cs">
+      <DependentUpon>OCAMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OCAMaster.Master.designer.cs">
+      <DependentUpon>OCAMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reports\Reports.aspx.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports.aspx.designer.cs">
+      <DependentUpon>Reports.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StaffCourses.aspx.cs">
+      <DependentUpon>StaffCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StaffCourses.aspx.designer.cs">
+      <DependentUpon>StaffCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StaffGrades.aspx.cs">
+      <DependentUpon>StaffGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StaffGrades.aspx.designer.cs">
+      <DependentUpon>StaffGrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Staff\StaffProfile.aspx.cs">
+      <DependentUpon>StaffProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Staff\StaffProfile.aspx.designer.cs">
+      <DependentUpon>StaffProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentCourses.aspx.cs">
+      <DependentUpon>StudentCourses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentCourses.aspx.designer.cs">
+      <DependentUpon>StudentCourses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentGrades.aspx.cs">
+      <DependentUpon>StudentGrades.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentGrades.aspx.designer.cs">
+      <DependentUpon>StudentGrades.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentProfile.aspx.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentProfile.aspx.designer.cs">
+      <DependentUpon>StudentProfile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CustomUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuControl.ascx.cs">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\MenuControl.ascx.designer.cs">
+      <DependentUpon>MenuControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminBookAddEdit.ascx.cs">
+      <DependentUpon>UCAdminBookAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminBookAddEdit.ascx.designer.cs">
+      <DependentUpon>UCAdminBookAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminBookView.ascx.cs">
+      <DependentUpon>UCAdminBookView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminBookView.ascx.designer.cs">
+      <DependentUpon>UCAdminBookView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminCourseAddEdit.ascx.cs">
+      <DependentUpon>UCAdminCourseAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminCourseAddEdit.ascx.designer.cs">
+      <DependentUpon>UCAdminCourseAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminCourseView.ascx.cs">
+      <DependentUpon>UCAdminCourseView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminCourseView.ascx.designer.cs">
+      <DependentUpon>UCAdminCourseView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStaffAddEdit.ascx.cs">
+      <DependentUpon>UCAdminStaffAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStaffAddEdit.ascx.designer.cs">
+      <DependentUpon>UCAdminStaffAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStaffView.ascx.cs">
+      <DependentUpon>UCAdminStaffView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStaffView.ascx.designer.cs">
+      <DependentUpon>UCAdminStaffView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStudentAddEdit.ascx.cs">
+      <DependentUpon>UCAdminStudentAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStudentAddEdit.ascx.designer.cs">
+      <DependentUpon>UCAdminStudentAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStudentView.ascx.cs">
+      <DependentUpon>UCAdminStudentView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCAdminStudentView.ascx.designer.cs">
+      <DependentUpon>UCAdminStudentView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCOtherReports.ascx.cs">
+      <DependentUpon>UCOtherReports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCOtherReports.ascx.designer.cs">
+      <DependentUpon>UCOtherReports.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffCoursesAddEdit.ascx.cs">
+      <DependentUpon>UCStaffCoursesAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffCoursesAddEdit.ascx.designer.cs">
+      <DependentUpon>UCStaffCoursesAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffCoursesView.ascx.cs">
+      <DependentUpon>UCStaffCoursesView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffCoursesView.ascx.designer.cs">
+      <DependentUpon>UCStaffCoursesView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffEdit.ascx.cs">
+      <DependentUpon>UCStaffEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffEdit.ascx.designer.cs">
+      <DependentUpon>UCStaffEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffGradesEdit.ascx.cs">
+      <DependentUpon>UCStaffGradesEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffGradesEdit.ascx.designer.cs">
+      <DependentUpon>UCStaffGradesEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffGradesView.ascx.cs">
+      <DependentUpon>UCStaffGradesView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffGradesView.ascx.designer.cs">
+      <DependentUpon>UCStaffGradesView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStaffReports.ascx.cs">
+      <DependentUpon>UCStaffReports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStaffReports.ascx.designer.cs">
+      <DependentUpon>UCStaffReports.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentCoursesAddEdit.ascx.cs">
+      <DependentUpon>UCStudentCoursesAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentCoursesAddEdit.ascx.designer.cs">
+      <DependentUpon>UCStudentCoursesAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentCoursesView.ascx.cs">
+      <DependentUpon>UCStudentCoursesView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentCoursesView.ascx.designer.cs">
+      <DependentUpon>UCStudentCoursesView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentEdit.ascx.cs">
+      <DependentUpon>UCStudentEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentEdit.ascx.designer.cs">
+      <DependentUpon>UCStudentEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentGradesAddEdit.ascx.cs">
+      <DependentUpon>UCStudentGradesAddEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentGradesAddEdit.ascx.designer.cs">
+      <DependentUpon>UCStudentGradesAddEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentGradesView.ascx.cs">
+      <DependentUpon>UCStudentGradesView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentGradesView.ascx.designer.cs">
+      <DependentUpon>UCStudentGradesView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UCStudentReports.ascx.cs">
+      <DependentUpon>UCStudentReports.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UCStudentReports.ascx.designer.cs">
+      <DependentUpon>UCStudentReports.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LoginMaster.Master" />
+    <Content Include="OCAMaster.Master" />
+    <Content Include="App_Themes\OCAThemes\OCASkin.skin" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\Reports\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj">
+      <Project>{376d2a71-d712-4a7a-a8b4-28cd175a853b}</Project>
+      <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{1efb5efe-7453-4b52-8fdd-79b1b8489927}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51746</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/OnlineCollegeAdministration</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

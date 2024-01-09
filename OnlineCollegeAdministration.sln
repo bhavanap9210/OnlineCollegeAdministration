@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlineCollegeAdministration", "OnlineCollegeAdministration\OnlineCollegeAdministration.csproj", "{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper", "Helper\Helper.csproj", "{1EFB5EFE-7453-4B52-8FDD-79B1B8489927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{376D2A71-D712-4A7A-A8B4-28CD175A853B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD0A1B80-6A2C-4C69-A59C-2D2199067ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EFB5EFE-7453-4B52-8FDD-79B1B8489927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EFB5EFE-7453-4B52-8FDD-79B1B8489927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EFB5EFE-7453-4B52-8FDD-79B1B8489927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EFB5EFE-7453-4B52-8FDD-79B1B8489927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{376D2A71-D712-4A7A-A8B4-28CD175A853B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{376D2A71-D712-4A7A-A8B4-28CD175A853B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{376D2A71-D712-4A7A-A8B4-28CD175A853B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{376D2A71-D712-4A7A-A8B4-28CD175A853B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

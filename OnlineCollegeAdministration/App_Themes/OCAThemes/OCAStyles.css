@@ -1,0 +1,166 @@
+﻿.bodyClass {
+    background-position: left top;
+    width: 98%;
+    height: 450px;
+    background-color: #F5F5F5;
+    background-image: url('../../logo.png');
+    background-repeat: no-repeat;
+    background-position-x:-10px;
+    background-position-y:-20px;
+}
+
+.Grid {
+    background-color: #fff;
+    margin: 5px 0 10px 0;
+    border: solid 1px #525252;
+    border-collapse: collapse;
+    font-family: Calibri;
+    color: #474747;
+}
+
+    .Grid td {
+        padding: 2px;
+        border: solid 1px #c1c1c1;
+    }
+
+    .Grid th {
+        padding: 4px 2px;
+        color: #fff;
+        background: #363670 url(Images/grid-header.png) repeat-x top;
+        border-left: solid 1px #525252;
+        font-size: 0.9em;
+    }
+
+        .Grid th a {
+            padding: 4px 2px;
+            color: #fff;
+            background: #363670 url(Images/grid-header.png) repeat-x top;
+            border-left: solid 1px #525252;
+            font-size: 0.9em;
+        }
+
+    .Grid .alt {
+        background: #fcfcfc url(Images/grid-alt.png) repeat-x top;
+    }
+
+    .Grid .pgr {
+        background: #363670 url(Images/grid-pgr.png) repeat-x top;
+    }
+
+        .Grid .pgr table {
+            margin: 3px 0;
+        }
+
+        .Grid .pgr td {
+            border-width: 0;
+            padding: 0 6px;
+            border-left: solid 1px #666;
+            font-weight: bold;
+            color: #fff;
+            line-height: 12px;
+        }
+
+        .Grid .pgr a {
+            color: Gray;
+            text-decoration: none;
+        }
+
+            .Grid .pgr a:hover {
+                color: #000;
+                text-decoration: none;
+            }
+
+.searchcol {
+    font-weight: bold;
+    background-color: #708090;
+    color: White;
+    font-size: large;
+}
+
+.MenuStyle {
+    text-align: left;
+}
+
+.tableTopClass {
+    width: 100%;
+    border-left: 0px solid black;
+    border-left: 0px solid black;
+    border-bottom: 0px solid black;
+    border-top: 1px solid black;
+}
+
+.leftSectionClass {
+    width: 330px;
+    height: 500px;
+    overflow: auto;
+    vertical-align: top;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.rightSectionClass {
+    width: 100%;
+    height: 500px;
+    overflow: auto;
+    vertical-align: top;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.errorLabelClass {
+    font-weight: bold;
+    color: red;
+    font-size: large;
+}
+
+.successLabelClass {
+    font-weight: bold;
+    color: darkgreen;
+    font-size: large;
+}
+.dropdownClass {
+    background-color: #ffffcc;
+    color: #000000;
+    min-width:150px;
+}
+.headingClass {
+    font-weight: bold;    
+    color: Black;
+    font-size: large;
+}
+.highlightClass {
+    background-color: #ffffcc;
+    font-weight: bold;
+    color: Black;
+    font-size: large;
+}
+
+/************ MaskedEdit Related Styles ***********************/
+.MaskedEditFocus {
+    background-color: #ffffcc;
+    color: #000000;
+}
+
+.MaskedEditMessage {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.MaskedEditError {
+    background-color: #ffcccc;
+}
+
+.MaskedEditFocusNegative {
+    background-color: #ffffcc;
+    color: #ff0000;
+}
+
+.MaskedEditBlurNegative {
+    color: #ff0000;
+}
+
+.tableBorders td{
+    border: 1px solid black;
+}
